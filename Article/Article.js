@@ -103,11 +103,11 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.*/
   data.push({
-  title: "first",
-  date: "one",
-  firstParagraph: "second",
-  secondParagraph: "third",
-  thirdParagraph: "four"
+  title: "title",
+  date: "date",
+  firstParagraph: "1st",
+  secondParagraph: "2nd",
+  thirdParagraph: "3rd"
 });
 //
 function allElements (title, date, firstParagraph, secondParagraph, thirdParagraph){
