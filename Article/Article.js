@@ -102,7 +102,14 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.*/
-  
+  data.push({
+  title: "first",
+  date: "one",
+  firstParagraph: "second",
+  secondParagraph: "third",
+  thirdParagraph: "four"
+});
+//
 function allElements (title, date, firstParagraph, secondParagraph, thirdParagraph){
   // Creating elements and their appropriate tag names
   const article = document.createElement("div");
@@ -123,15 +130,30 @@ function allElements (title, date, firstParagraph, secondParagraph, thirdParagra
 article.classList.add("article");
 pTag1.classList.add("date");
 spanClass.classList.add("expandButton");
+// Adding content
+articleTitle.textContent = title;
+pTag1.textContent = date;
+pTag2.textContent = firstParagraph;
+pTag3.textContent = secondParagraph;
+pTag4.textContent = thirdParagraph;
+spanClass.textContent = "button";
+
+
+//  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+spanClass.addEventListener('click', e => {
+  article.classList.toggle("article-open");
+})
+  // Step 3: return the entire component.
+  console.log(article);
+return article;
+
 }
 
+  // Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+const component = document.querySelector(".articles");
+data.forEach(data => {
+  component.append(allElements(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
+  // Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
-  /*Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
-*/
