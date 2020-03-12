@@ -101,9 +101,32 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.*/
+  
+function allElements (title, date, firstParagraph, secondParagraph, thirdParagraph){
+  // Creating elements and their appropriate tag names
+  const article = document.createElement("div");
+  const articleTitle = document.createElement("h2");
+  const pTag1 = document.createElement("p");
+  const pTag2 = document.createElement("p");
+  const pTag3 = document.createElement("p");
+  const pTag4 = document.createElement("p");
+  const spanClass = document.createElement("span");
+// Append children tags to its parent.
+  article.append(articleTitle);
+  article.append(pTag1);
+  article.append(pTag2);
+  article.append(pTag3);
+  article.append(pTag4);
+  article.append(spanClass);
+// Add classes to elements
+article.classList.add("article");
+pTag1.classList.add("date");
+spanClass.classList.add("expandButton");
+}
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+
+  /*Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
 
